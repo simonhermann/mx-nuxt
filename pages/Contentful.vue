@@ -1,6 +1,7 @@
 <template>
 <v-layout>
-    <h1>{{ person.fields.name }}</h1>
+    <h1>{{ title }}</h1>
+    <h3>{{ person.fields.name }}</h3>
     <!-- render blog posts -->
     <template v-for="post in posts">
       <h3>{{ post.fields.title }}</h3>
@@ -18,14 +19,14 @@
             </template>
             <hr>
           </section> -->
-    <section v-for="post in posts">
+    <!-- <section v-for="post in posts">
       <div v-for="fields in post">
         <ul v-for="(val,key) in fields">
           <li>{{key}}: {{val}}</li>
         </ul>
       </div>
       <hr>
-    </section>
+    </section> -->
 </v-layout>
 </template>
 
@@ -35,6 +36,11 @@
   const client = createClient()
 
   export default {
+    data () {
+      return {
+        title: 'Contentful works!'
+      }
+    },
     // `env` is available in the context object
     asyncData ({env}) {
       return Promise.all([

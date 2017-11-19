@@ -48,7 +48,7 @@
       <v-spacer></v-spacer>
       <nuxt-link  to="/inspire">Inspire</nuxt-link>
       <v-spacer></v-spacer>
-      <nuxt-link  to="/contenttest">contenttest</nuxt-link>
+      <nuxt-link  to="/contentful">contentful</nuxt-link>
       <!-- <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
@@ -82,6 +82,25 @@
     </v-footer>
   </v-app>
 </template>
+
+<style>
+/* page-trasitions */
+.page-enter-active, .page-leave-active{
+  transition: all .15s ease-out;
+}
+.page-enter, .page-leave-active{
+  opacity: 0;
+  /* transform: scale(0.95); */
+  transform-origin: 50% 50%;
+}
+.page-enter{
+  /* transform: scale(0.95); */
+}
+.page-leave-active{
+  /* transform: scale(1.05); */
+}
+</style>
+
 
 <script>
   export default {
